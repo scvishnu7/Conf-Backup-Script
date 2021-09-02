@@ -36,6 +36,8 @@ The script copies every file or directory listed in the source file `backup.list
     /etc/**/*.conf
     /etc/ssh/sshd_config
 
+Prepend the line with '#' or ';' in-order to comment the line backup.list
+
 # Create the backup sources file:
 
     vi ./backup.list

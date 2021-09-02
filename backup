@@ -7,4 +7,4 @@ find ./confs -maxdepth 1 -mindepth 1 -not -iname ".git" -not -iname ".ssh" | xar
 # Copy the files and directories on the list to the current (backup) directory
 # xargs does not start a shell, so we need to do it ourselves or globbing won't be available
 # Enable globstar (two asterisks = recurse into subdirectories) and include files starting with a dot in filename expansion
-cat ./backup.list | xargs -I % bash -c "shopt -s globstar dotglob; cp --parents -R % ./confs/"
+cat ./backup.list | grep '^[[:blank:]]*[^[:blank:]#;]' | xargs -I % bash -c "shopt -s globstar dotglob; cp --parents -R % ./confs/"
